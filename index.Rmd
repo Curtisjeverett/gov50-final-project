@@ -1,27 +1,19 @@
 ---
-title: "Responsiveness in immigration enforcement"
-author: "Angelo Dagonel (TF)"
-description: "County-level ICE compliance under constituent preferences and electoral dynamics"
+title: "Amount of public schools vs. amount of prisons"
+author: "Curtis Everett"
+description: "Does ratio between schools and prisons matter?"
 output:
   distill::distill_article:
     self_contained: false
 ---
 
 
-
 ## Project thoughts
 
-I am interested in exploring data related to immigration enforcement and immigration preferences. A working project with Asya Magazinnik (Massachusetts Institute of Technology) explores how county-level compliance of Sheriff's offices with ICE detainer requests relates to ideal point estimates of immigration preferences. Specifically: our project asks whether the public's immigration preferences, restrictive or accommodating, influences how local law enforcement agencies comply with bureaucratic delegation from ICE.
+In my final project, I am interested in investigating the possible link between the ratio of schools (specifically public schools) to prisons in a given area, and what affect that might have on the prison rate in that community across different age groups and demographics. My hypothesis is that the higher the school to prison ratio is, the less imprisonment a community will experience, especially in minors. To do this I will look at data sets that show me the amount of schools/ prisons in given areas, demographics of people in those areas, priosn rates over periods of times, etc.
 
-To investigate this relationship, we are relying on data from three different sources:
+In addition, I am also interested in exploring the link between types of music people listen to and he rates of imprisonment for the given genre of music. I am not completely sure how I want to incorporate this at the moment but very much interested. 
 
-1. [Transactional Records Access Clearinghouse (TRAC)](https://trac.syr.edu/immigration/) data on detainer requests sent to county Sheriff's offices from the Department of Homeland Security's sub-agency Immigration Customs and Enforcement (ICE);
-
-2. [Coooperative Election Study (CES)](https://cces.gov.harvard.edu/) data on immigration policy preferences; and
-
-3. novel data of county-level Sheriff elections and electoral type--partisan or non-partisan elections, non-electoral appointment.
-
-TRAC data provides us with our outcome variable, the proportion of ICE detainer requests that are complied with; CES data provides us with our explanatory variable, public immigration policy preferences; and the Sheriff electoral data provides us with a grouping variable.
 
 
 
