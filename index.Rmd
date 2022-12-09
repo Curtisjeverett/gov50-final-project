@@ -1,7 +1,7 @@
 ---
-title: "Amount of public schools vs. amount of prisons"
+title: "Contributing Factors to Crime Rate"
 author: "Curtis Everett"
-description: "Does ratio between schools and prisons matter?"
+description: "Is Race or Income More Telling of Crime Rate?"
 output:
   distill::distill_article:
     self_contained: false
@@ -10,9 +10,8 @@ output:
 
 ## Project thoughts
 
-In my final project, I am interested in investigating the possible link between the ratio of schools (specifically public schools) to prisons in a given area, and what affect that might have on the prison rate in that community across different age groups and demographics. My hypothesis is that the higher the school to prison ratio is, the less imprisonment a community will experience, especially in minors. To do this I will look at data sets that show me the amount of schools/ prisons in given areas, demographics of people in those areas, priosn rates over periods of times, etc.
+In my final project, I am interested in investigating the variables that contribute to crime rates in all 67 counties in Pennsylvania. The two main variables that I will analyze is the relationship between income per capita on crime rate and the relationship between race on crime rate. My hypothesis is that income will be more telling of crime rate than racial factors. I will analyze other variables as well, such as age and education, as I understand there could be a possibility that the counties with lowest income are also the counties with highest percentage of minority residents, which would bias my data and make it hard to form a link between one variable on crime rate. 
 
-In addition, I am also interested in exploring the link between types of music people listen to and he rates of imprisonment for the given genre of music. I am not completely sure how I want to incorporate this at the moment but very much interested. 
 
 
 
