@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-3-1.png","index_files/figure-html5/unnamed-chunk-3-2.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","PA Counties.csv"]}
+  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-3-1.png","index_files/figure-html5/unnamed-chunk-3-2.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/kePrint-0.0.1/kePrint.js","index_files/lightable-0.0.1/lightable.css","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","PA Counties.csv"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1519,10 +1519,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<h2 id="project-thoughts">Project thoughts</h2>
-<p>In my final project, I am interested in investigating the variables that contribute to midterm voter turnout in all 67 counties in Pennsylvania. The two main variables that I will analyze is the relationship between income per capita on midterm turnout and the relationship between proportion of minorities on voter turnout. My hypothesis is that income will be more telling of voter turnout than proportion of minorities in a county.</p>
+<h2 id="project-thoughts-milestone-1">Project thoughts ~ Milestone 1</h2>
+<p>In my final project, I am interested in investigating the variables that contribute to midterm voter turnout in all 67 counties in Pennsylvania. The two main variables that I will analyze is the relationship between income per capita on midterm turnout and the relationship between proportion of minorities in a county on voter turnout. My hypothesis is that income will be more telling of voter turnout (%) than proportion of minorities in a county.</p>
 <p>##Milestone 2 explaining variables</p>
-Does income per capita of a county or the proportion of minorities living in that county have a greater effect on voter turnout in midterm elections? In this study, I plan to look at the relationship between these two variables and try to gather which one would be more telling of voter turnout. I hypothesize that the average income per capita will have a more significant effect on voter turnout than will the proportion of minorities that live within a county. Counties with higher income per capita, I predict will turnout much more than counties with lower income per capita. On the contrary, I predict counties with higher populations of minorities will turnout less than those with less populations of minorities, but to a lesser extent. My sample is all 67 Pennsylvania counties from 2018-2020. My unit of analysis is midterm election of 2018.My two explanatory variables are incomer per capita in each county (coded 1 if the county has an income per capita of over $50,000, and 0 if under $50,000). Counties with greater than $50,000 income per capita are considered in the higher income bracket in this experiment. This data was taken from the 2020 U.S. Census. My other explanatory variable is proportion of minorities in a county (coded 1 if proportion is greater than 6% minority population and 0 if under 6%). minority in this experiment is anyone that identifies with a race outside of white (i.e, African American, Asian, Hispanic, Native American). This data was also taken from the 2020 U.S. Census. My outcome variable is the voter turnout percentage for each Pennsylvania County during the 2018 midterm election cycles. These values were taken from WHYY Research through Keystone Crossroads. If I observe a stronger positive correlation between income and voter turnout than I do with proportion of minorities in a countty and voter turnout, this would support my hypothesis.
+<p>Does income per capita of a county or the proportion of minorities living in that county have a greater effect on voter turnout in midterm elections? In this study, I plan to look at the relationship between these two variables and try to gather which one would be more telling of voter turnout. I hypothesize that the average income per capita will have a more significant effect on voter turnout than will the proportion of minorities that live within a county. Counties with higher income per capita, I predict will turnout much more than counties with lower income per capita. On the contrary, I predict counties with higher populations of minorities will turnout less than those with less populations of minorities, but to a lesser extent. My sample is all 67 Pennsylvania counties from 2018-2020. My unit of analysis is the midterm election of 2018. My two explanatory variables are incomer per capita in each county (coded 1 if the county has an income per capita of over $50,000, and 0 if under $50,000). Counties with greater than $50,000 income per capita are considered in the higher income bracket in this experiment. This data was taken from the 2020 U.S. Census. My other explanatory variable is the proportion of minorities in a county (coded 1 if the proportion is greater than 6% minority population and 0 if under 6%). Minority in this experiment is anyone that identifies with a race other than white (i.e, African American, Asian, Hispanic, Native American). This data was also taken from the 2020 U.S. Census. My outcome variable is the voter turnout percentage for each Pennsylvania County during the 2018 midterm election cycles. These values were taken from WHYY Research through Keystone Crossroads. If I observe a stronger positive correlation between income and voter turnout than I do with proportion of minorities in a county and voter turnout, this would support my hypothesis.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
@@ -1530,12 +1530,13 @@ Does income per capita of a county or the proportion of minorities living in tha
 <span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/tidymodels/infer'>infer</a></span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
+<p>##Milestone 3</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>pennsylvania_counties</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"PA Counties.csv"</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span> prop_Minorities <span class='op'>=</span> <span class='op'>(</span><span class='va'>`Black or African American Alone`</span> <span class='op'>+</span> <span class='va'>`Asian Alone`</span> <span class='op'>+</span> <span class='va'>`American Indian and Alaska Native Alone`</span> <span class='op'>+</span> <span class='va'>`Some Other Race Alone`</span><span class='op'>)</span><span class='op'>/</span> <span class='va'>`Total Population of One Race`</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Higher_Income <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>`Higher Income`</span> <span class='op'>==</span> <span class='fl'>1</span>, <span class='st'>"Higher"</span>, <span class='st'>"Lower"</span><span class='op'>)</span>, </span>
-<span>         High_Minority <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>`Higher proportion minority`</span> <span class='op'>==</span> <span class='fl'>1</span>, <span class='st'>"High prop"</span>, <span class='st'>"Low prop"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Income_level <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>`Higher Income`</span> <span class='op'>==</span> <span class='fl'>1</span>, <span class='st'>"Higher"</span>, <span class='st'>"Lower"</span><span class='op'>)</span>, </span>
+<span>         Minority_level <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>`Higher proportion minority`</span> <span class='op'>==</span> <span class='fl'>1</span>, <span class='st'>"High prop"</span>, <span class='st'>"Low prop"</span><span class='op'>)</span><span class='op'>)</span></span>
 <span></span>
 <span><span class='va'>pennsylvania_counties</span></span></code></pre>
 </div>
@@ -1563,16 +1564,24 @@ Does income per capita of a county or the proportion of minorities living in tha
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>pennsylvania_counties</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>`2020 Personal Income Per Capita (in dollars)`</span>,</span>
-<span>             y <span class='op'>=</span> <span class='va'>`2018 Midterm turnout (%)`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>pennsylvania_counties</span>,</span>
+<span>         mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Income_level</span>,</span>
+<span>                       y <span class='op'>=</span><span class='va'>`2018 Midterm turnout (%)`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_boxplot.html'>geom_boxplot</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span> <span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Income Per Capita"</span>,</span>
+<span>        y <span class='op'>=</span> <span class='st'>"Midterm Turnout"</span>,</span>
+<span>        title <span class='op'>=</span> <span class='st'>"Income  vs. Voter Turnout"</span><span class='op'>)</span></span></code></pre>
 </div>
 <img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" />
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>pennsylvania_counties</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>prop_Minorities</span>,</span>
-<span>             y <span class='op'>=</span> <span class='va'>`2018 Midterm turnout (%)`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>pennsylvania_counties</span>,</span>
+<span>         mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Minority_level</span>,</span>
+<span>                       y <span class='op'>=</span><span class='va'>`2018 Midterm turnout (%)`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_boxplot.html'>geom_boxplot</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span> <span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Proportion of Minorities"</span>,</span>
+<span>        y <span class='op'>=</span> <span class='st'>"Midterm Turnout"</span>,</span>
+<span>        title <span class='op'>=</span> <span class='st'>"Proportion of Minorities  vs. Voter Turnout"</span><span class='op'>)</span></span></code></pre>
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-3-2.png" width="624" /></p>
 </div>
@@ -1582,27 +1591,28 @@ Does income per capita of a county or the proportion of minorities living in tha
 </div>
 <pre><code>[1] FALSE</code></pre>
 </div>
+<p>Analysis of above visual: From the above visuals, we see that Higher income tends to result in higher turnout, whereas higher proportion of minorities tends to result in lower turnout.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>income_ate</span> <span class='op'>&lt;-</span> <span class='va'>pennsylvania_counties</span> <span class='op'>|&gt;</span> </span>
-<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/specify.html'>specify</a></span><span class='op'>(</span><span class='va'>`2018 Midterm turnout (%)`</span> <span class='op'>~</span> <span class='va'>Higher_Income</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/specify.html'>specify</a></span><span class='op'>(</span><span class='va'>`2018 Midterm turnout (%)`</span> <span class='op'>~</span> <span class='va'>Income_level</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/calculate.html'>calculate</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"diff in means"</span>, order <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Higher"</span>, <span class='st'>"Lower"</span><span class='op'>)</span><span class='op'>)</span></span>
 <span><span class='va'>income_ate</span></span></code></pre>
 </div>
 <pre><code>Response: 2018 Midterm turnout (%) (numeric)
-Explanatory: Higher_Income (factor)
+Explanatory: Income_level (factor)
 # A tibble: 1 × 1
    stat
   &lt;dbl&gt;
 1  1.86</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>minority_ate</span> <span class='op'>&lt;-</span> <span class='va'>pennsylvania_counties</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/specify.html'>specify</a></span><span class='op'>(</span><span class='va'>`2018 Midterm turnout (%)`</span> <span class='op'>~</span> <span class='va'>High_Minority</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/specify.html'>specify</a></span><span class='op'>(</span><span class='va'>`2018 Midterm turnout (%)`</span> <span class='op'>~</span> <span class='va'>Minority_level</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/calculate.html'>calculate</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"diff in means"</span>, order <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"High prop"</span>, <span class='st'>"Low prop"</span><span class='op'>)</span><span class='op'>)</span></span>
 <span><span class='va'>minority_ate</span></span></code></pre>
 </div>
 <pre><code>Response: 2018 Midterm turnout (%) (numeric)
-Explanatory: High_Minority (factor)
+Explanatory: Minority_level (factor)
 # A tibble: 1 × 1
     stat
    &lt;dbl&gt;
@@ -1613,7 +1623,7 @@ Explanatory: High_Minority (factor)
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>02138</span><span class='op'>)</span></span>
 <span></span>
 <span><span class='va'>ate_income_boots</span> <span class='op'>&lt;-</span> <span class='va'>pennsylvania_counties</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/specify.html'>specify</a></span><span class='op'>(</span><span class='va'>`2018 Midterm turnout (%)`</span> <span class='op'>~</span> <span class='va'>Higher_Income</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/specify.html'>specify</a></span><span class='op'>(</span><span class='va'>`2018 Midterm turnout (%)`</span> <span class='op'>~</span> <span class='va'>Income_level</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/generate.html'>generate</a></span><span class='op'>(</span>reps <span class='op'>=</span> <span class='fl'>1000</span>, type <span class='op'>=</span> <span class='st'>"bootstrap"</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/calculate.html'>calculate</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"diff in means"</span>,</span>
 <span>            order <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Higher"</span>, <span class='st'>"Lower"</span><span class='op'>)</span><span class='op'>)</span></span>
@@ -1627,7 +1637,7 @@ Explanatory: High_Minority (factor)
 1 -0.000234     3.59</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>ate_minority_boots</span> <span class='op'>&lt;-</span> <span class='va'>pennsylvania_counties</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/specify.html'>specify</a></span><span class='op'>(</span><span class='va'>`2018 Midterm turnout (%)`</span> <span class='op'>~</span> <span class='va'>High_Minority</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/specify.html'>specify</a></span><span class='op'>(</span><span class='va'>`2018 Midterm turnout (%)`</span> <span class='op'>~</span> <span class='va'>Minority_level</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/generate.html'>generate</a></span><span class='op'>(</span>reps <span class='op'>=</span> <span class='fl'>1000</span>, type <span class='op'>=</span> <span class='st'>"bootstrap"</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/calculate.html'>calculate</a></span><span class='op'>(</span>stat<span class='op'>=</span> <span class='st'>"diff in means"</span>,</span>
 <span>            order <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"High prop"</span>, <span class='st'>"Low prop"</span><span class='op'>)</span><span class='op'>)</span></span>
@@ -1642,17 +1652,19 @@ Explanatory: High_Minority (factor)
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>turnout_changes</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>`2018 Midterm turnout (%)`</span> <span class='op'>~</span> <span class='va'>Higher_Income</span> <span class='op'>+</span> <span class='va'>High_Minority</span>, data <span class='op'>=</span> <span class='va'>pennsylvania_counties</span><span class='op'>)</span></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>turnout_changes</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>`2018 Midterm turnout (%)`</span> <span class='op'>~</span> <span class='va'>Income_level</span> <span class='op'>+</span> <span class='va'>Minority_level</span>, data <span class='op'>=</span> <span class='va'>pennsylvania_counties</span><span class='op'>)</span></span>
 <span><span class='va'>turnout_changes</span>                 </span></code></pre>
 </div>
 <pre><code>
 Call:
-lm(formula = `2018 Midterm turnout (%)` ~ Higher_Income + High_Minority, 
+lm(formula = `2018 Midterm turnout (%)` ~ Income_level + Minority_level, 
     data = pennsylvania_counties)
 
 Coefficients:
-          (Intercept)     Higher_IncomeLower  High_MinorityLow prop  
-               58.525                 -2.424                  1.649  </code></pre>
+           (Intercept)       Income_levelLower  
+                58.525                  -2.424  
+Minority_levelLow prop  
+                 1.649  </code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://vincentarelbundock.github.io/modelsummary/reference/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>turnout_changes</span>,</span>
 <span>                           statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"s.e. = {std.error}"</span>,</span>
@@ -1694,7 +1706,7 @@ p = &lt;0.001
 </tr>
 <tr>
 <td style="text-align:left;">
-Higher_IncomeLower
+Income_levelLower
 </td>
 <td style="text-align:center;">
 −2.424
@@ -1716,7 +1728,7 @@ p = 0.016
 </tr>
 <tr>
 <td style="text-align:left;">
-High_MinorityLow prop
+Minority_levelLow prop
 </td>
 <td style="text-align:center;">
 1.649
@@ -1763,6 +1775,7 @@ R2 Adj.
 </tbody>
 </table>
 </div>
+<p>Regression Analysis:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
