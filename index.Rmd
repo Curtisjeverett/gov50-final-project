@@ -10,9 +10,91 @@ output:
 
 ## Project thoughts
 
-In my final project, I am interested in investigating the variables that contribute to crime rates in all 67 counties in Pennsylvania. The two main variables that I will analyze is the relationship between income per capita on crime rate and the relationship between race on crime rate. My hypothesis is that income will be more telling of crime rate than racial factors. I will analyze other variables as well, such as age and education, as I understand there could be a possibility that the counties with lowest income are also the counties with highest percentage of minority residents, which would bias my data and make it hard to form a link between one variable on crime rate. 
+In my final project, I am interested in investigating the variables that contribute to midterm voter turnout in all 67 counties in Pennsylvania. The two main variables that I will analyze is the relationship between income per capita on midterm turnout and the relationship between proportion of minorities on voter turnout. My hypothesis is that income will be more telling of voter turnout than proportion of minorities in a county.
+
+
+##Milestone 2 explaining variables
+
+Does income per capita of a county or the proportion of minorities living in that county have a greater effect on voter turnout in midterm elections? In this study, I plan to look at the relationship between these two variables and try to gather which one would be more telling of voter turnout. I hypothesize that the average income per capita will have a more significant effect on voter turnout than will the proportion of minorities that live within a county. Counties with higher income per capita, I predict will turnout much more than counties with lower income per capita. On the contrary, I predict counties with higher populations of minorities will turnout less than those with less populations of minorities, but to a lesser extent. My sample is all 67 Pennsylvania counties from 2018-2020. My unit of analysis is midterm election of 2018.My two explanatory variables are incomer per capita in each county (coded 1 if the county has an income per capita of over $50,000, and 0 if under $50,000). Counties with greater than $50,000 income per capita are considered in the higher income bracket in this experiment. This data was taken from the 2020 U.S. Census. My other explanatory variable is proportion of minorities in a county (coded 1 if proportion is greater than 6% minority population and 0 if under 6%). minority in this experiment is anyone that identifies with a race outside of white (i.e, African American, Asian, Hispanic, Native American). This data was also taken from the 2020 U.S. Census. My outcome variable is the voter turnout percentage for each Pennsylvania County during the 2018 midterm election cycles. These values were taken from WHYY Research through Keystone Crossroads. If I observe a stronger positive correlation between income and voter turnout than I do with proportion of minorities in a countty and voter turnout, this would support my hypothesis. 
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(infer)
+
+```
+
+```{r}
+pennsylvania_counties <- read_csv("PA Counties.csv") |>
+  mutate( prop_Minorities = (`Black or African American Alone` + `Asian Alone` + `American Indian and Alaska Native Alone` + `Some Other Race Alone`)/ `Total Population of One Race`) |>
+  mutate(Higher_Income = if_else(`Higher Income` == 1, "Higher", "Lower"), 
+         High_Minority = if_else(`Higher proportion minority` == 1, "High prop", "Low prop"))
+
+pennsylvania_counties
+```
+
+
+```{r}
+pennsylvania_counties |>
+  ggplot(aes(x = `2020 Personal Income Per Capita (in dollars)`,
+             y = `2018 Midterm turnout (%)`)) +
+  geom_point()
+
+pennsylvania_counties |>
+  ggplot(aes(x = prop_Minorities,
+             y = `2018 Midterm turnout (%)`)) +
+  geom_point()
+
+```
+```{r}
+```
+
+
+```{r}
+income_ate <- pennsylvania_counties |> 
+  specify(`2018 Midterm turnout (%)` ~ Higher_Income) |>
+  calculate(stat = "diff in means", order = c("Higher", "Lower"))
+income_ate
+
+minority_ate <- pennsylvania_counties |>
+  specify(`2018 Midterm turnout (%)` ~ High_Minority) |>
+  calculate(stat = "diff in means", order = c("High prop", "Low prop"))
+minority_ate
 
 
 
+```
 
+```{r}
+set.seed(02138)
+
+ate_income_boots <- pennsylvania_counties |>
+  specify(`2018 Midterm turnout (%)` ~ Higher_Income) |>
+  generate(reps = 1000, type = "bootstrap")|>
+  calculate(stat = "diff in means",
+            order = c("Higher", "Lower"))
+ate_income_ci_95 <- ate_income_boots |>
+  get_confidence_interval(level = 0.95, type = "percentile")
+ate_income_ci_95
+
+ate_minority_boots <- pennsylvania_counties |>
+  specify(`2018 Midterm turnout (%)` ~ High_Minority)|>
+  generate(reps = 1000, type = "bootstrap")|>
+  calculate(stat= "diff in means",
+            order = c("High prop", "Low prop"))
+ate_minority_ci_95 <- ate_minority_boots |>
+  get_confidence_interval(level = 0.95, type = "percentile")
+ate_minority_ci_95
+
+  
+```
+
+```{r}
+turnout_changes <- lm(`2018 Midterm turnout (%)` ~ Higher_Income + High_Minority, data = pennsylvania_counties)
+turnout_changes                 
+
+modelsummary::modelsummary(turnout_changes,
+                           statistic = c("s.e. = {std.error}",
+                                         "p = {p.value}"),
+                           gof_map = c("nobs", "r.squared", "adj.r.squared"))
+```
 
