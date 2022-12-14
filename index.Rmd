@@ -8,14 +8,14 @@ output:
 ---
 
 
-## Project thoughts ~ Milestone 1
+##Milestone 1 - Project Thoughts
 
-In my final project, I am interested in investigating the variables that contribute to midterm voter turnout in all 67 counties in Pennsylvania. The two main variables that I will analyze is the relationship between income per capita on midterm turnout and the relationship between proportion of minorities in a county on voter turnout. My hypothesis is that income will be more telling of voter turnout (%) than proportion of minorities in a county.
+In my final project, I am interested in investigating the variables that contribute to midterm voter turnout in all 67 counties in Pennsylvania. The two main variables that I will analyze is the relationship between income per capita on midterm turnout and the relationship between proportion of minorities in a county on voter turnout. My hypothesis is that income will be more telling of voter turnout (%) than proportion of minorities in a county. This study is important because in a time when elections seem to be more important than ever, voter turnout is a huge problem. By observing some of the main factors that contribute to voter turnout, we can try to find ways to ensure that everyone has equal chances to participate in elections, which can mean just bringing more awareness about elections to some counties that aren't as aware or even finding ways to make voting more convenient and possible for individuals who might have hard times getting to the polls.
 
 
-##Milestone 2 explaining variables
+##Milestone 2 - Explaining variables
 
-Does income per capita of a county or the proportion of minorities living in that county have a greater effect on voter turnout in midterm elections? In this study, I plan to look at the relationship between these two variables and try to gather which one would be more telling of voter turnout. I hypothesize that the average income per capita will have a more significant effect on voter turnout than will the proportion of minorities that live within a county. Counties with higher income per capita, I predict will turnout much more than counties with lower income per capita. On the contrary, I predict counties with higher populations of minorities will turnout less than those with less populations of minorities, but to a lesser extent. My sample is all 67 Pennsylvania counties from 2018-2020. My unit of analysis is the midterm election of 2018. My two explanatory variables are incomer per capita in each county (coded 1 if the county has an income per capita of over $50,000, and 0 if under $50,000). Counties with greater than $50,000 income per capita are considered in the higher income bracket in this experiment. This data was taken from the 2020 U.S. Census. My other explanatory variable is the proportion of minorities in a county (coded 1 if the proportion is greater than 6% minority population and 0 if under 6%). Minority in this experiment is anyone that identifies with a race other than white (i.e, African American, Asian, Hispanic, Native American). This data was also taken from the 2020 U.S. Census. My outcome variable is the voter turnout percentage for each Pennsylvania County during the 2018 midterm election cycles. These values were taken from WHYY Research through Keystone Crossroads. If I observe a stronger positive correlation between income and voter turnout than I do with proportion of minorities in a county and voter turnout, this would support my hypothesis.
+Does income per capita of a county or the proportion of minorities living in that county have a greater effect on voter turnout in midterm elections? In this study, I plan to do a cross-sectional study and look at the relationship between these two variables and try to gather which one would be more telling of voter turnout. I hypothesize that the average income per capita will have a more significant effect on voter turnout than will the proportion of minorities that live within a county. Counties with higher income per capita, I predict will turnout much more than counties with lower income per capita. On the contrary, I predict counties with higher populations of minorities will turnout less than those with less populations of minorities, but to a lesser extent. My sample is all 67 Pennsylvania counties from 2018-2020. My unit of analysis is the midterm election of 2018. My two explanatory variables are incomer per capita in each county (coded 1 if the county has an income per capita of over $50,000, and 0 if under $50,000). Counties with greater than $50,000 income per capita are considered in the higher income bracket in this experiment. This data was taken from the 2020 U.S. Census. My other explanatory variable is the proportion of minorities in a county (coded 1 if the proportion is greater than 6% minority population and 0 if under 6%). Minority in this experiment is anyone that identifies with a race other than white (i.e, African American, Asian, Hispanic, Native American). This data was also taken from the 2020 U.S. Census. My outcome variable is the voter turnout percentage for each Pennsylvania County during the 2018 midterm election cycles. These values were taken from WHYY Research through Keystone Crossroads. If I observe a stronger positive correlation between income and voter turnout than I do with proportion of minorities in a county and voter turnout, this would support my hypothesis. When I run my regression, a more positive significant coefficient for income than proportion of minority would support my hypothesis.
 
 ```{r}
 library(tidyverse)
@@ -24,7 +24,7 @@ library(infer)
 
 ```
 
-##Milestone 3
+##Milestone 3 - Loading data + 1 visualization
 
 ```{r}
 pennsylvania_counties <- read_csv("PA Counties.csv") |>
@@ -35,7 +35,6 @@ pennsylvania_counties <- read_csv("PA Counties.csv") |>
 pennsylvania_counties
 ```
 
-
 ```{r}
 pennsylvania_counties |>
   ggplot(data = pennsylvania_counties,
@@ -43,7 +42,7 @@ pennsylvania_counties |>
                        y =`2018 Midterm turnout (%)`)) +
   geom_boxplot() +
   labs (x = "Income Per Capita",
-        y = "Midterm Turnout",
+        y = "Midterm Turnout (%)",
         title = "Income  vs. Voter Turnout")
 
 pennsylvania_counties |>
@@ -52,13 +51,11 @@ pennsylvania_counties |>
                        y =`2018 Midterm turnout (%)`)) +
   geom_boxplot() +
   labs (x = "Proportion of Minorities",
-        y = "Midterm Turnout",
+        y = "Midterm Turnout (%)",
         title = "Proportion of Minorities  vs. Voter Turnout")
     
 
 
-```
-```{r}
 ```
 Analysis of above visual: From the above visuals, we see that Higher income tends to result in higher turnout, whereas higher proportion of minorities tends to result in lower turnout.
 
@@ -72,8 +69,6 @@ minority_ate <- pennsylvania_counties |>
   specify(`2018 Midterm turnout (%)` ~ Minority_level) |>
   calculate(stat = "diff in means", order = c("High prop", "Low prop"))
 minority_ate
-
-
 
 ```
 
@@ -98,8 +93,9 @@ ate_minority_ci_95 <- ate_minority_boots |>
   get_confidence_interval(level = 0.95, type = "percentile")
 ate_minority_ci_95
 
-  
 ```
+
+##Milestone 4 - Results Section, Linear Regression
 
 ```{r}
 turnout_changes <- lm(`2018 Midterm turnout (%)` ~ Income_level + Minority_level, data = pennsylvania_counties)
@@ -110,4 +106,11 @@ modelsummary::modelsummary(turnout_changes,
                                          "p = {p.value}"),
                            gof_map = c("nobs", "r.squared", "adj.r.squared"))
 ```
-Regression Analysis:
+
+Regression Analysis: From the linear regression, the coefficient value of -2.424 for the variable income_level lower tells me that for every 1 unit increase in lower Income_level (with other variables held constant), resulted in a 2.424 decrease in voter turnout. While the coefficient value of 1.649 for minority_level low prop tells me that for every 1 unit increase in Low proportion Minority_level, resulted in a 1.649 increase in voter turnout. The p-value for the income_level explanatory variable is 0.016, which is below the significance level of 0.05, which means it is statistically significant. On the contrary, the p-value for the minority_level explanatory variable is 0.097, which is above the significance level of 0.05, which means it is not statistically significant. From the linear regression, it appears that income level does have a causal effect on voter turnout in midterm elections, whereas proportion of minority residents does not really have a causal effect. It is worth noting that my coefficients measure unit increases in lower income and low proportion of minority on effects on voting turnout. So, results are consistent with my hypothesis.
+
+##Conclusion 
+
+In this cross-sectional study, I aimed to answer whether income per capita in a county or proportion of minorities living in a county was more telling of voter turnout in all 67 Pennsylvania counties. The results support my hypothesis that there is a much stronger correlation between income level and voter turnout. The higher incomer per capita a county has, the higher the county voter turnout in the midterm elections. The results do show that the more proportion of minority population a county has, the lower the turnout rate, but this correlation is not very strong. These results are interesting because it shows which areas need to be focused more on during campaigns. In order to allow fair chances for all citizens to take part in elections, candidates should focus on reaching lower income communities. Even if it isn't candidates, there needs to be more awareness and emphasis on voting in lower income communities because each citizen in a state, whether high income or low income should contribute to their representation. 
+
+A few issues with this study could be: 1. I only looked at data from the 2018 midterm elections. It would have been better had I looked at data from midterm election in other years and also general elections to see if the trend still holds. I suspect the results would still be consistent, but actually including the data would have made my study better. 2. I would have also included more explanatory variables in my study because in this study it could just be that counties with high proportion of minorities have lower income per capita and vice versa which would be a confounding in my study. Also, I took my population and income data from the 2020 census, but used a 2018 election. I'm sure the values did not change much within the two year span, but my data is probably a bit less accurate than if I would have taken all my data from the same year.
